@@ -44,11 +44,15 @@
         <a
           :href="meal.strSource"
           target="_blank"
-          class="ml-3 px-3 py-2 rounded border-2 border-transparent text-indigo-600 transition-colors"
+          class="ml-3 px-3 py-2 rounded border-2 border-transparent text-indigo-600 
+          transition-colors hover:text-red-300 hover:text-lg"
         >
           View Original Source
         </a>
       </div>
+    </div>
+    <div class="mt-2">
+      <SocialSharing />
     </div>
 
 
@@ -60,6 +64,7 @@ import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router';
 import axiosClient from '../axiosClient';
 import YouTubeButton from '../components/YouTubeButton.vue';
+import SocialSharing from '../components/SocialSharing.vue';
 
 const route = useRoute();
 const meal = ref({})
