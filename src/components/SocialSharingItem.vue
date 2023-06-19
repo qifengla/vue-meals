@@ -1,22 +1,23 @@
 <template>
-    <div class="font-bold bg-stone-200 rounded text-center text-cyan-500 hover:bg-green-300 hover:text-orange-500 hover:scale-110">
+    <div class="font-bold items-center bg-stone-200 rounded text-center text-cyan-500 hover:bg-green-300 hover:text-orange-500 hover:scale-110">
         <ShareNetwork 
-            :network="network"
+            :network="social.name"
             url="https://news.vuejs.org/issues/180"
-            title="The world of meals"
-            description="How about trying this meal"
+            title="Would you like to try this meal"
+            description="The world of meals"
             hashtags="vue js, vite"
         >
-            {{ network }}
+            <p>{{ social.name }}</p>
+            <font-awesome-icon :icon="social.icon" size="2x" />
         </ShareNetwork>
     </div>
 </template>
 
 <script setup>
-const { network } = defineProps({
-  network: {
+const { social } = defineProps({
+  social: {
     required: true,
-    type: String
+    type: Object
   }
 })
 </script>
